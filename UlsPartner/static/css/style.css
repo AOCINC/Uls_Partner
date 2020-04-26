@@ -1,0 +1,35 @@
+.navbar{
+    background-color:#ffffff;
+    margin-bottom: 20px;
+    /* padding: 50%; */
+    
+    
+}
+.nav-link{
+    color:#4a0904;
+    margin-left: 15px;
+    font-size: 15px;
+    font-family: 'Graduate', cursive;
+}
+.nav-link:hover{
+    color:#3053a6;
+}
+#brand{
+    margin-left: -15px;
+}
+#brand-name{
+    font-family: 'Russo One', sans-serif;
+    color:gray
+
+}
+
+#toggler{
+    /* border-color: rgb(192,192,192); */
+
+
+}
+.navbar-toggler .navbar-toggler-icon{
+    border-color:grey;
+    /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); */
+    background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(9,55,244, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
