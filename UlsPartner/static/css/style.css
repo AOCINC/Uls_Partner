@@ -8,7 +8,7 @@
 .nav-link{
     color:#4a0904;
     margin-left: 15px;
-    font-size: 15px;
+    font-size: 14px;
     font-family: 'Graduate', cursive;
 }
 .nav-link:hover{
@@ -18,13 +18,16 @@
     margin-left: -15px;
 }
 #brand-name{
+    /* font-size: 15px; */
     font-family: 'Russo One', sans-serif;
     color:gray
+    
 
 }
 
 #toggler{
     /* border-color: rgb(192,192,192); */
+    padding: 0px;
 
 
 }
@@ -38,6 +41,27 @@
 
 
 /* Partners App Styling */
+
+.form-signup{
+    max-width: 380px;
+    margin:0 auto;  
+    border: 1px solid #828282;
+    padding: 15px 40px 50px;
+    border-radius: 0px;
+
+}
+.form-signup .form-signup-heading{
+    color: #ff4500;
+    font-family: 'Crimson Text', serif;
+
+}
+.wrapper2{
+    /* margin:80px */
+    /* margin-top: 100px; */
+    margin-right:2px ;
+    margin-bottom: 30px;
+    
+}
 
 
 
