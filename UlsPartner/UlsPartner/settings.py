@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # apps
     'Uls_PartnerApp.apps.UlsPartnerappConfig',
-      
+          
     
 
     # third party apps
