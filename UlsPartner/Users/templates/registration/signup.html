@@ -9,13 +9,13 @@
 <br><br><br><br><br>
 <div class="wrapper2">
     <form class="form-signup"method="post">
-    <h2 class="form-signup-heading text-center"> Join Today</h2>
+    <h4 class="form-signup-heading text-center"> <img src="{% static "images/uls-brand-01.png" %}" alt=""> <span id="brand-name"> Uls For Business </span></h4>
     <hr>
       {% csrf_token %}
       {{ form | crispy }}
-      <button type="submit" class="btn btn-danger btn-block" id="signupbtn">Sign Up</button>    
+      <button type="submit" class="btn btn-danger btn-block" id="signupbtn">Continue</button>    
       <hr>
-    <small class='text-muted font-weight-bold'>Already Have Account ? <a class="ml-2" href="">Sign In</a></small>
+    <small class='text-muted font-weight-bold'>Already Have Account ? <a class="ml-2" href="{% url 'login' %}">Sign In</a></small>
   </form>
 </div>
 
