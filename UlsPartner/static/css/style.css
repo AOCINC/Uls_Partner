@@ -41,6 +41,34 @@
 
 
 /* Partners App Styling */
+.wrapper{
+    /* margin: 80px; */
+    margin-top:100px;   
+}
+.form-signin{
+    max-width: 380px;
+    margin: 0 auto;
+    border:1px solid grey;
+    padding: 15px 40px 50px;
+    border-radius: 10px;
+}
+.form-signin .form-sigin-heading{
+    color: #ff4500;
+    font-family: 'Crimson Text', serif;
+   
+}
+
+
+#signin-heading{
+    color:#F52A2A;
+
+}
+#signinbtn{
+    font-family: 'Crimson Text', serif;
+
+}
+
+
 
 .form-signup{
     max-width: 380px;

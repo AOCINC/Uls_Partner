@@ -132,7 +132,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+AUTH_PROFILE_MODULE = 'Users.UserProfile'
+
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
                     STATIC_DIR,
                     ]
+
+
+# for media 
+MEDIA_URL = '/media/'   
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+LOGIN_URL = 'login'

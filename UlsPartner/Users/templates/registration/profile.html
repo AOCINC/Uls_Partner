@@ -1,0 +1,46 @@
+{% extends 'Uls_PartnerApp/base.html' %} 
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<br><br><br><br>
+<body class="projects-body">
+<div id="profile-top" class="container">
+  {% if messages %}
+  <ul class="container messages alert alert-warning">
+    {% for message in messages %}
+    <li  {% if message.tags %} class="{{ message.tags }} " {% endif %}> {{ message }} </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+  <div class="media row">
+      <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" alt="Image not uploaded">
+      <div class="media-body">
+        <h2 class="account-heading">{{ user.username }}</h2>
+        <p class="text-secondary">{{ user.email }}</p>
+      </div>
+    </div>
+   <!-- form profile -->
+  <div class="row">
+      <div class="col-md-6">
+    <form class=""method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h2 class="form-signup-heading text-center">Profile Info</h2>
+      <hr>
+        <div class="shadow p-3 mb-5 bg-white rounded">
+          {{ u_form | crispy}}
+          {{ p_form | crispy}}
+        </div>
+        <button type="submit" class="btn btn-danger btn-block" id="signupbtn">Update</button>    
+        <hr>
+    </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
+</body>
+
