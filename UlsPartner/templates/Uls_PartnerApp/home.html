@@ -29,8 +29,11 @@
               <!-- <input id="email" type="email" placeholder="Enter your email here" name="email">
               <input id="submit" type="submit" class="text-uppercase btn-main ml-3" value="Notify Me"> -->
             </form>
-            <a href="{% url 'signup' %}"> <button class="btn btn-outline-danger btn-block ">SignUp</button> </a>
+            {% if user.is_authenticated %}
+            {% else %}
 
+            <a href="{% url 'signup' %}"> <button class="btn btn-outline-danger btn-block ">SignUp</button> </a>
+            {% endif %}
           </div>
         </div>
       </div>
