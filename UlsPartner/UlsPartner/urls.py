@@ -20,12 +20,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from Uls_PartnerApp import urls
 from Users import urls
+from TutorsInfo import urls
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('Uls_PartnerApp.urls')),
     path('',include('Users.urls')),
+    path('',include('TutorsInfo.urls')),
     path('accounts/', include('django.contrib.auth.urls')), # accounts for authentication
 
     # password reset setting urls 

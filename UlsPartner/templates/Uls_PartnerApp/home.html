@@ -30,6 +30,8 @@
               <input id="submit" type="submit" class="text-uppercase btn-main ml-3" value="Notify Me"> -->
             </form>
             {% if user.is_authenticated %}
+            <a href="{% url 'Tutors_Info_Request' %}"> <button class="btn btn-outline-danger btn-block ">Become A Tutor of Uls</button> </a>
+
             {% else %}
 
             <a href="{% url 'signup' %}"> <button class="btn btn-outline-danger btn-block ">SignUp</button> </a>

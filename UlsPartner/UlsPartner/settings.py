@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     # apps
     'Uls_PartnerApp.apps.UlsPartnerappConfig',
     'Users.apps.UsersConfig',
-    
+    'TutorsInfo.apps.TutorsinfoConfig',
 
     # third party apps
     'crispy_forms', 

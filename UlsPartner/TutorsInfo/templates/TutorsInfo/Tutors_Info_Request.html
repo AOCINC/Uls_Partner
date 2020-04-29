@@ -1,0 +1,35 @@
+<html>
+{% extends 'Uls_PartnerApp/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<br><br><br><br>
+<body style="">
+    
+<div class="wrapper2">
+    <form class="form-signup"method="post">
+    <h4 class="form-signup-heading text-center"> <img src="{% static "images/uls-brand-01.png" %}" alt=""> <span id="brand-name"> Drop Tutor Info </span></h4>
+    <hr>
+      {% csrf_token %}
+      {{ Tutors_form| crispy }}
+      <button type="submit" class="btn btn-danger btn-block" id="signupbtn">Drop My Info</button>    
+      <hr>
+    <!-- <small class='text-muted font-weight-bold'>Already Have Account ? <a class="ml-2" href="{% url 'login' %}">Sign In</a></small> -->
+  </form>
+</div>
+
+</body>
+
+
+<!-- THIS SCRIPT WILL PRIVENT THE BACK BUTTON IN BROWSER, IT WILL NOT ALLOW TO GO TO PRIVIOUS PAGE  -->
+<script type="text/javascript"> 
+  window.history.forward(); 
+  function noBack() { 
+      window.history.forward(); 
+  } 
+</script> 
+
+
+{% endblock %}
