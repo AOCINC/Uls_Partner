@@ -5,6 +5,8 @@ from django.views.decorators.cache import never_cache
 from .models import Projects
 from .forms import ProjectsForm
 
+
+@cache_control(no_cache=True,private=True, must_revalidate=True, no_store=True)
 @login_required
 def Projects_View(request):
     if request.method == 'POST':
