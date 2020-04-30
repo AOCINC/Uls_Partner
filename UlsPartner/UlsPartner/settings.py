@@ -41,10 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # apps
+    # my apps
     'Uls_PartnerApp.apps.UlsPartnerappConfig',
     'Users.apps.UsersConfig',
     'TutorsInfo.apps.TutorsinfoConfig',
+    'Projects.apps.ProjectsConfig',
 
     # third party apps
     'crispy_forms', 

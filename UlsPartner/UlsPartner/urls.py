@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 from Uls_PartnerApp import urls
 from Users import urls
 from TutorsInfo import urls
+from Projects import urls
 
 
 urlpatterns = [
@@ -28,6 +29,7 @@ urlpatterns = [
     path('',include('Uls_PartnerApp.urls')),
     path('',include('Users.urls')),
     path('',include('TutorsInfo.urls')),
+    path('',include('Projects.urls')),
     path('accounts/', include('django.contrib.auth.urls')), # accounts for authentication
 
     # password reset setting urls 

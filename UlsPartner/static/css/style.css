@@ -481,7 +481,7 @@ header, #nav-bar {
   --input-padding-y: .75rem
 }
 
-body {
+#body {
 
 background: #360033;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to top, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
@@ -545,8 +545,152 @@ background: linear-gradient(to top, #0b8793, #360033); /* W3C, IE 10+/ Edge, Fir
   color: white;
   background-color: #3b5998
 }
-
-
-
 /* tutor form end here */
+/* Projects Form styling */
+#project-upload-4{
+  background: #ADA996;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+.col-md-4 {
+  background: #F9F8F4;
+  text-align: center;
+  border-radius: 12px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0
+}
+
+.logo {
+  text-align: left !important;
+  transform: translate(-40px, 20px);
+  font-weight: 1000 !important;
+  font-size: 8px !important;
+  /* font-family: 'Abril Fatface', cursive  */
+  font-family: 'Russo One', sans-serif !important;
+
+}
+
+.logo span {
+  font-size: 20px
+}
+
+.image {
+  margin-top: 60%
+}
+
+h6.mt-3 {
+  font-weight: bold
+}
+
+.col-md-4 p {
+  font-size: 12px;
+  line-height: 15px;
+  padding: 0 60px 0 60px;
+  color: #0000009e;
+  font-weight: 500
+}
+
+.col-md-8 {
+  background: #fff;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding-bottom: 80px
+}
+
+p.mb-0 {
+  color: #6C6D6F;
+  font-size: 10px;
+  font-weight: bold
+}
+
+strong {
+  font-size: 12px
+}
+
+.fa-phone-volume {
+  margin-right: 4px;
+  font-size: 12px
+}
+
+h4.form-heading {
+  font-weight: bold;
+  font-size: 23px !important
+}
+
+p.form-para {
+  font-size: 13px;
+  font-weight: 500;
+  color: #0000009e;
+  line-height: 17px
+}
+
+p.form-para::after {
+  content: ".";
+  font-size: 0;
+  display: block;
+  width: 8%;
+  height: 4px;
+  background: #6200EA;
+  margin: 10px 0;
+  transform: translateX(-10px)
+}
+
+/* .form-group {
+  position: relative;
+  margin-bottom: 0.5rem;
+  margin-right: 90px
+} */
+
+.btn-primary {
+  border: none !important;
+  background: #6200EA !important;
+  height: 46px !important
+}
+
+.btn-primary span {
+  color: #E5DDFF;
+  font-size: 15px
+}
+
+.terms {
+  font-size: 10px;
+  color: #0000009e;
+  font-weight: 500
+}
+
+.terms a {
+  color: #6200EA !important
+}
+
+
+#project-upload-body{
+  margin-top: 50px;
+  margin-bottom: 50px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Projects Form styling  Ended here */
+
+
+
+
+
+
+
+
+
 /* Partners App styling Ended Here */
