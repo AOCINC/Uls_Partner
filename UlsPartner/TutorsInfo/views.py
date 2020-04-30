@@ -17,7 +17,7 @@ from django.views.decorators.cache import never_cache
 
 
 
-
+@login_required
 def Tutor_success(request):
     template = 'TutorsInfo/Tutors_info_success.html'
     return render(request, template)
@@ -30,7 +30,7 @@ def Tutors_InfoView(request):
         Tutors_form = TutrosInfo_form(request.POST)
         if Tutors_form.is_valid():
             Tutors_form.save()
-            # sending Email from the requested tutors
+            # sending Email from the requested tutors to ULS Team
             if request.user.is_authenticated:
                 current_user       = request.user
                 email              = Tutors_form.cleaned_data['Email']
@@ -55,7 +55,22 @@ def Tutors_InfoView(request):
                 message = get_template('TutorsInfo/Tutors_email.html').render(context)
                 msg = EmailMessage(subject, message, to=to,from_email = from_email)
                 msg.content_subtype  = 'html'
-                msg.send()       
+                msg.send()        
+                # mail sending to Partner/User . who dropped the request for his channel.......
+                Tutor   = current_user
+                Tutor_mail = email
+                subject = 'Uls Team'
+                context ={
+                         'Tutor':Tutor,
+                         }
+                uls_email = 'aocincpvtltd@gmail.com'
+                from_email = uls_email
+                to = [Tutor_mail,]
+                message = get_template('TutorsInfo/send_mail_to_partner.html').render(context)
+                msg = EmailMessage(subject, message, to = to, from_email = from_email)
+                msg.content_subtype = 'html'
+                msg.send()
+                # mail sending to partner/User ends here.
                 return redirect('success')
     else:
         Tutors_form = TutrosInfo_form()
@@ -64,3 +79,5 @@ def Tutors_InfoView(request):
                }
     template = 'TutorsInfo/Tutors_Info_Request.html'
     return render(request, template, context)
+
+
