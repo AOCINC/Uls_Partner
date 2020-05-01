@@ -1,7 +1,8 @@
 from django.db import models
 from django.core.validators import RegexValidator
 from datetime import date
-import datetime
+from datetime import datetime
+
 
 
 
@@ -35,7 +36,8 @@ class Projects(models.Model):
     Title       = models.CharField(max_length=49)
     Description = models.TextField()
     Location    = models.CharField(max_length = 49)
-    Posted_On   = models.DateField(auto_now_add=True)
-    In          = models.CharField(max_length = 29, choices = List_Duration)
+    Posted_On   = models.DateTimeField(default=datetime.now)
     Duration    = models.CharField(max_length = 20, choices = In_Total_Duration)
+    In          = models.CharField(max_length = 29, choices = List_Duration)
+
 

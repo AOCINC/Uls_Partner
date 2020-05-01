@@ -144,8 +144,28 @@ header, #nav-bar {
   border: 1.5px solid #a6bfe5;
   border-radius: 50px;
 }
+/* uls content */
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* usl content end here */
 /* FEATURES */
 #features .f-img {
   background-size: contain;
@@ -198,9 +218,10 @@ header, #nav-bar {
   min-height: 300px;
   height: 100%;
   /* PNG */
-  background-image: url("https://drive.google.com/uc?export=view&id=1aIua6ZW8fv1_PFB2nYLT9GxQX7DbP7Ig");
+  /* background-image: url("https://drive.google.com/uc?export=view&id=1aIua6ZW8fv1_PFB2nYLT9GxQX7DbP7Ig"); */
+  /* background: url("static/images/home-tutor.png"  ); */
   /* SVG */
-  background-image: url("https://drive.google.com/uc?export=view&id=1VIVlXxoI5Mj9wGl6b6pS8sWf5LyPiq0f");
+  /* background-image: url("https://drive.google.com/uc?export=view&id=1VIVlXxoI5Mj9wGl6b6pS8sWf5LyPiq0f"); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: center;
