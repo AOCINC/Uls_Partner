@@ -5,81 +5,40 @@
 
 {% block content %}
   <br><br>
+<!-- <body id="body"> -->
 <div class="wrapper">
-<div class="container">
-  {% if form.errors %}
-  <p  class="alert alert-danger form-signin">Your username and password didn't match. Please try again.</p>
-  {% endif %}
-  <form class="form-signin" action="{% url 'login' %}" method="post">
-  {% csrf_token %}
-    <div class="form-group">
-      <h2 class="form-sigin-heading text-center">Sign In</h2>
-      <hr>
-      <label for="username">UserName*</label>
-      <input type="text" name="username" class="form-control" placeholder="Enter Name"  required>
-    </div>
+  <div class="container">  
+    {% if form.errors %}
+    <p  class="alert alert-danger form-signin">Your username and password didn't match. Please try again.</p>
+    {% endif %}
+    <form class="form-signin" action="{% url 'login' %}" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <h2 class="form-sigin-heading text-center">Sign In</h2>
+        <hr>
+        <label for="username">UserName*</label>
+        <input type="text" name="username" class="form-control" placeholder="Enter Name"  required>
+      </div>
 
-    <div class="form-group">
+      <div class="form-group">
         <label for="password2">Password*</label>
         <input type="password" name="password" placeholder="Password" class="form-control" required>
-    </div>
-    <input type="submit" value="login" class="btn btn-danger btn-block">
-    <br>
-    <small class="text-muted ml-2">
-      <a href="{% url 'password_reset' %}">Forgot Password ?  </a>
-    </small>
-    <hr>
-    <small class='text-muted font-weight-bold'>Don't have an account ?  <a class="ml-2" href="{% url 'signup' %}">Sign up</a></small>
-
-  </form>
+      </div>
+      <input type="submit" value="login" class="btn btn-danger btn-block">
+      <br>
+      <small class="text-muted ml-2">
+        <a href="{% url 'password_reset' %}">Forgot Password ?  </a>
+      </small>
+      <hr>
+      <small class='text-muted font-weight-bold'>Don't have an account ?  <a class="ml-2" href="{% url 'signup' %}">Sign up</a></small>
+    </form>
  <br>
 
 
 </div>
 </div>
-
-<!-- 
-
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
-
-{% if next %}
-    {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
-    {% else %}
-    <p>Please login to see this page.</p>
-    {% endif %}
-{% endif %}
-
-<form method="post" action="{% url 'login' %}">
-{% csrf_token %}
-
-<div>
-  <td>{{ form.username.label_tag }}</td>
-  <td>{{ form.username }}</td>
-</div>
-<div>
-  <td>{{ form.password.label_tag }}</td>
-  <td>{{ form.password }}</td>
-</div>
-
-<div>
-  <input type="submit" value="login" />
-  <input type="hidden" name="next" value="{{ next }}" />
-</div>
-</form>
-
-{# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
- -->
+<!-- </body> -->
 
 
 
-
-
-
-
-
-{% endblock %}
+{% endblock %} 

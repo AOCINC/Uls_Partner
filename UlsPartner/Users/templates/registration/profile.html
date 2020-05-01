@@ -12,19 +12,21 @@
     {% endfor %}
   </ul>
 {% endif %}
-  <div class="media row">
+  <div class="media row" id="profile-row">
       <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" alt="Image not uploaded">
       <div class="media-body">
-        <h2 class="account-heading">{{ user.username }}</h2>
-        <p class="text-secondary">{{ user.email }}</p>
+        <div class="container">
+        <h2 class="account-heading" style="color: white;margin: 20px;">{{ user.username | title }}</h2>
+        <p class="text-white" style="margin: 20px;">{{ user.email | title }}</p>
+      </div>
       </div>
     </div>
    <!-- form profile -->
-  <div class="row">
+  <div class="row" id="profile-body">
       <div class="col-md-6">
     <form class=""method="POST" enctype="multipart/form-data">
       {% csrf_token %}
-      <h2 class="form-signup-heading text-center">Profile Info</h2>
+      <h2 class="form-signup-heading text-center" id="profile-heading">Profile Info</h2>
       <hr>
         <div class="shadow p-3 mb-5 bg-white rounded">
           {{ u_form | crispy}}
