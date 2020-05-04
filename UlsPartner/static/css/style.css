@@ -37,6 +37,78 @@
     background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(9,55,244, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
+
+
+/* home page  */
+#home-html, #home-body{
+    margin-top: -1.5%;
+    position: absolute;
+    /* top:0;
+    bottom:0;*/
+    left:0;
+    right:0; 
+    overflow-x: hidden;
+    
+}
+
+/* first div in home page */
+
+#first-div {
+  margin-top: -1.5%;
+  position: relative;
+  background-color: black;
+  height: 75vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+#first-div video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#first-div .container {
+  position: relative;
+  z-index: 2;
+}
+
+#first-div .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  #first-div {
+    background: url('http://sandbox.thewikies.com/vfe-generator/images/big-buck-bunny_poster.jpg') black no-repeat center center scroll;
+  }
+  #first-div video {
+    display: none;
+  }
+}
+
+/* second div  */
+
+
+
+
+/* second div end */
 /* home page styling */
 
 
@@ -128,7 +200,7 @@ header, #nav-bar {
   text-align: right;
 }
 /* PRESENTATION SECTION */
-#presentation {
+/* #presentation {
   background-color: #ebf1fa;
   padding-top: 120px;
   padding-bottom: 120px;
@@ -153,10 +225,10 @@ header, #nav-bar {
 
 #presentation .text-presentation {
   width: 70%;
-}
+} */
 
 /* FORM */
-#form label[for="email"] {
+/* #form label[for="email"] {
   padding-bottom: 10px;
 }
 #form #email::placeholder {
@@ -170,7 +242,12 @@ header, #nav-bar {
   padding-left: 30px;
   border: 1.5px solid #a6bfe5;
   border-radius: 50px;
-}
+} */
+
+
+
+
+
 /* uls Tutors content  */
 
 .box {
@@ -259,10 +336,22 @@ header, #nav-bar {
 }
 
 /* HOW IT WORKS */
+/* home page how it works */
+#title-h2{
+  font-family: 'Crimson Text', serif;
+}
+#title-h2 p{
+    font-family: 'Crimson Text', serif; 
+
+}
+.info{
+  color: white;
+}
 #how-it-works {
-  background-color: #EBF1FA;
+  background-color: ;
   position: relative;
   padding-top: 180px;
+  margin-top: -20%;
 }
 #how-it-works:before {
   content: ' ';
@@ -274,26 +363,28 @@ header, #nav-bar {
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("https://drive.google.com/uc?export=view&id=1TaMw57YfzJHMGuColbCWHSBeUPuY37wD");
+  /* background-image: url("https://drive.google.com/uc?export=view&id=1TaMw57YfzJHMGuColbCWHSBeUPuY37wD"); */
+
 }
 #how-it-works .info {
-  padding: 10px 20px;
-  background-color: #F0C808;
+  padding: 20px 20px;
+  /* background-color: rgb(35, 213, 226); */
+  background: #373B44;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 20px;
 }
 #how-it-works .app-preview .preview {
   width: 100%;
   min-height: 300px;
   height: 100%;
-  /* PNG */
-  background-image: url("https://drive.google.com/uc?export=view&id=1aIua6ZW8fv1_PFB2nYLT9GxQX7DbP7Ig");
-  /* background: url("static/images/home-tutor.png"  ); */
-  /* SVG */
-  background-image: url("https://drive.google.com/uc?export=view&id=1VIVlXxoI5Mj9wGl6b6pS8sWf5LyPiq0f");
+  background-image: url("/static/images/how_it_works2.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: top;
+  /* margin-left: 2%; */
+  /* padding: 2%; */
 }
 
 /* BLOG */
@@ -374,7 +465,10 @@ header, #nav-bar {
 #footer {
   background-color: #2E5EAA;
   color: #fff;
-  padding: 30px 0;
+  padding: 30px ;
+}
+#footer .col-sm-12 .col-md-4{
+  background-color:#2E5EAA ;
 }
 #footer i {
   margin-right: 15px;
@@ -581,10 +675,10 @@ header, #nav-bar {
 /* tutor form end here */
 /* Projects Form styling */
 #project-upload-4{
-  background: #ADA996;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+  background: #7b4397;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #dc2430, #7b4397);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #dc2430, #7b4397); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 .col-md-4 {
   background: #F9F8F4;
@@ -698,8 +792,18 @@ p.form-para::after {
 
 
 #project-upload-body{
+  margin-left: 2px;
   margin-top: 50px;
   margin-bottom: 50px
+  
+  position: absolute;
+  /* top:0;
+  bottom:0;*/
+  left:0;
+  right:0; 
+  overflow-x: hidden;
+  
+}
 }
 
 
