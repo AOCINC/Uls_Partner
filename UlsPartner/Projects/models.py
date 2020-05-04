@@ -33,11 +33,12 @@ class Projects(models.Model):
     this projects models used to take the inputs from the partner 
 
     '''
-    Title       = models.CharField(max_length=49)
-    Description = models.TextField()
-    Location    = models.CharField(max_length = 49)
-    Posted_On   = models.DateTimeField(default=datetime.now)
-    Duration    = models.CharField(max_length = 20, choices = In_Total_Duration)
-    In          = models.CharField(max_length = 29, choices = List_Duration)
+    Title              = models.CharField(max_length=49)
+    Description        = models.TextField()
+    Location           = models.CharField(max_length = 49)
+    Linkedin_Profile   = models.CharField(max_length = 79,default = '')
+    Posted_On          = models.DateTimeField(default=datetime.now)
+    Duration           = models.CharField(max_length = 20, choices = In_Total_Duration)
+    In                 = models.CharField(max_length = 29, choices = List_Duration)
 
 
