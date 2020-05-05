@@ -96,13 +96,12 @@
 
 @media (pointer: coarse) and (hover: none) {
   #first-div {
-    background: url('http://sandbox.thewikies.com/vfe-generator/images/big-buck-bunny_poster.jpg') black no-repeat center center scroll;
+    background: url("/static/images/first-div-mbl.jpg") black no-repeat center center scroll;
   }
   #first-div video {
     display: none;
   }
 }
-
 /* second div  */
 
 
