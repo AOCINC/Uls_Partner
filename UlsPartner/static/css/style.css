@@ -96,7 +96,7 @@
 
 @media (pointer: coarse) and (hover: none) {
   #first-div {
-    background: url("/static/images/first-div-mbl.jpg") black no-repeat center center scroll;
+    background: url("/static/images/first-div-mbl2.jpg") black no-repeat center center scroll;
   }
   #first-div video {
     display: none;
