@@ -822,6 +822,32 @@ p.form-para::after {
   overflow-x: hidden;
   
 }
+
+
+
+/* Projects Form styling  Ended here */
+/* terms condions  */
+
+#t-head{
+  color: #ffffff;
+  background:#003891;
+  text-align: center;
+  padding: 4%;
+}
+#content-blck-blue{
+  background: #d1e8e7;
+  padding: 2%;
+}
+#content-blck-white{
+  background: #e1f7f6;
+  padding: 2%;
+}
+
+#privacy-policy{
+  background:#003891 ;
+  color: #ffffff;
+  text-align: center;
+  padding: 2%;
 }
 
 
@@ -830,17 +856,7 @@ p.form-para::after {
 
 
 
-
-
-
-
-
-
-
-
-/* Projects Form styling  Ended here */
-
-
+/* terms condtions end */
 
 
 
