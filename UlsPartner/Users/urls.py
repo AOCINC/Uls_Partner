@@ -7,6 +7,7 @@ urlpatterns = [
     path('login',views.Login, name = 'login'),
     path('logout',views.logout,name='logout'),
     path('profile',views.profile, name = 'profile'),
+    # path('test',views.profile, name = 'test'),
     
 
 ]

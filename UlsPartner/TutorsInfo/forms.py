@@ -8,6 +8,10 @@ class TutrosInfo_form(forms.ModelForm):
     class Meta:
         model = Tutors
         fields = '__all__'
+        # exclude = ('user',)
+        widgets = {
+            'Teaching_Experience': forms.Textarea(attrs={'rows':3, 'cols':3}),
+        }
 
 
 

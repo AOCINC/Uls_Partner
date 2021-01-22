@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.contrib.auth.models import User
 from .models import Tutors, Youtubers
 from .forms import TutrosInfo_form,YoutubersInfo_form
 from django.template.loader import get_template
@@ -27,19 +28,37 @@ def Tutor_success(request):
 @never_cache
 def Tutors_InfoView(request):
     if request.method == 'POST':
-        Tutors_form = TutrosInfo_form(request.POST)
+        Tutors_form = TutrosInfo_form(request.POST,instance = request.user.Tutors)
         if Tutors_form.is_valid():
-            Tutors_form.save()
             # sending Email from the requested tutors to ULS Team
             if request.user.is_authenticated:
                 current_user       = request.user
+                Education          = Tutors_form.cleaned_data['Education']
+                certified_In       = Tutors_form.cleaned_data['Certified_In']
                 email              = Tutors_form.cleaned_data['Email']
                 phone              = Tutors_form.cleaned_data['Phone_Number']
                 country            = Tutors_form.cleaned_data['Country']
                 state              = Tutors_form.cleaned_data['State']
+                Languages_Spoken   = Tutors_form.cleaned_data['Languages_Spoken']
                 Tutor_subject      = Tutors_form.cleaned_data['Subjects']
                 Expertise_subject  = Tutors_form.cleaned_data['Expertise_Subject']
-                
+                Year_Of_Experience = Tutors_form.cleaned_data['Year_Of_Experience']
+                Teaching_Experience= Tutors_form.cleaned_data['Teaching_Experience']
+                save_in_tutors = Tutors(
+                                        user        = current_user,
+                                        Education   = Education,
+                                        Certified_In= Certified_In,
+                                        Email       = email,
+                                        Phone_Number = phone,
+                                        Country     = country,
+                                        State       = state,
+                                        Languages_Spoken = Languages_Spoken,
+                                        Subjects         = Tutor_subject,
+                                        Expertise_Subject = Expertise_subject,
+                                        Year_Of_Experience = Year_Of_Experience,
+                                        Teaching_Experience = Teaching_Experience,
+                                        )
+                save_in_tutors.save() # saving the table 
                 subject = 'A Request From Tutor'
                 context ={
                           'User':current_user,
@@ -76,9 +95,33 @@ def Tutors_InfoView(request):
         Tutors_form = TutrosInfo_form()
     context = {
                'Tutors_form':Tutors_form,
+               
                }
     template = 'TutorsInfo/Tutors_Info_Request.html'
     return render(request, template, context)
+
+
+
+def Tutors_Details_View(request):
+    template  = 'TutorsInfo/Tutors_Details.html'
+    name = request.user
+    ed  = request.user.id
+    data = Tutors.get_Tutor_Data_by_ids(name)
+    # data = Tutors.objects.filter(user = ed)
+    # print(Tutors.user.Education)
+    print(data)
+    for d in data:
+        print(d.Education)
+        print(d.Certified_In)
+    context = {
+
+    }
+    return render(request,template,context)
+
+
+
+
+
 
 
 

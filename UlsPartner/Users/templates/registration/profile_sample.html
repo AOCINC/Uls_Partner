@@ -1,0 +1,304 @@
+{% extends 'Uls_PartnerApp/base.html' %} 
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<!-- css for this page -->
+<head>
+  <style>
+    .top-div{
+      padding:8%;
+      /* background-image: url("static/images/bg-texture.jpg"); */
+      background-image: url("static/images/green_bg_tile.png");
+      background-size:contain;
+      margin-top:-2.3%;
+      
+    }
+    
+
+    #main-div{
+      margin-top:-10%;
+      background:rgb(255, 255, 255);
+    }
+    #main-img{ 
+      padding: 2%;
+    }
+    #main-img img{
+       height:200px;
+       border-top-right-radius:20px;
+       border-top-left-radius:20px;
+       border-bottom-left-radius:20px;
+       border-bottom-right-radius:20px;
+       box-shadow: 0 8px 6px -6px rgb(60, 2, 114);
+       margin-top:4%;
+
+    }
+    #User-info{
+      background:rgb(255, 255, 255);
+      padding:5%;
+      box-shadow:
+      0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+      0 12.5px 10px rgba(0, 0, 0, 0.06),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+      0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+      0 100px 80px rgba(0, 0, 0, 0.12)
+    ;
+    margin-bottom:15%;
+    }
+    .panel-heading .panel-title{
+      color:#5A20CB;
+    }
+    #profile-img{
+      background-color:gray;
+    }
+     /* mobile devcies and other */
+     @media screen
+    /* and (min-width: 400px) */
+    and (min-device-width : 320px)
+    and (max-device-width : 480px){ 
+      .top-div {
+        padding: 30%;
+        margin-top:-10%;
+    }
+  }
+    /* mobile devcies and other */
+    @media screen
+    /* and (min-width: 400px) */
+    and (min-device-width : 320px)
+    and (max-device-width : 480px){ 
+    #profile-top-info {
+      margin:7% 8%;
+      margin-top:-2%;
+    }
+  }
+  /* for image in other devices */
+  @media screen
+    /* and (min-width: 400px) */
+    and (min-device-width : 320px)
+    and (max-device-width : 480px){ 
+    #main-img img{
+      margin-left:14% ;
+      margin-top:-85%;
+    }
+  }
+
+    
+  </style>
+</head>
+
+<!-- css for this page -->
+
+
+
+
+
+
+<br><br><br><br><br>
+<!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> -->
+<div class="top-div"></div>
+<div class="container bootstrap snippets bootdeys" id="main-div">
+<div class="row">
+  {% if messages %}
+  <ul class="container messages alert alert-warning">
+    {% for message in messages %}
+    <li  {% if message.tags %} class="{{ message.tags }} " {% endif %}> {{ message }} </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+  <div class="col-xs-12 col-sm-9">
+    <form class="form-horizontal" method="POST" enctype="multipart/form-data" novalidate >
+      {% csrf_token %}
+        <div class=" container row">
+          <div class="col-6">
+          <div class="panel panel-default">
+            <div class="panel-body text-center" id="main-img">
+            <img src="{{ user.profile.image.url }}" class="img-circle profile-avatar" alt="User avatar">
+            </div>
+          </div>
+          </div>
+        <div class="col-6" id="profile-top-info">
+          <br>
+          <legend id="username" style="font-weight:500;">
+             {{ request.user.username |title}}  
+            <img src="{% static 'images/approved.png' %}" style="height: 30px; margin-top:-5px;" alt="">
+          </legend>
+          <small style="font-weight:500;">
+            Full Name -
+            {{ user.profile.FullName |title}}
+          </small><br>
+          <small style="font-weight:500;">
+            Email -
+            {{ request.user.email |title}}
+          </small><br>
+          <small style="font-weight:500;">
+            <img src="{% static 'images/phone.png' %}"  style="height:18px; "alt="">
+            {% if user.profile.Phone_Number %}
+            {{ user.profile.Phone_Number}}
+            {% else %}
+            Please Update Your Phone Number
+            {% endif %}
+          </small><br>
+          <small style="font-weight:500;">
+            <img src="{% static 'images/location.png' %}" style="height:20px;"  alt="">
+            {% if user.profile.Country %}
+            {{ user.profile.Country |title }},
+            {{ user.profile.State |title }}
+            {% else %}
+            Please Update Your Location Details
+            {% endif %}
+          </small><br>
+          <small style="font-weight:500;">
+            {% if user.profile.Certified_In %}
+            Certified Professional Trainer @
+            {{ user.profile.Certified_In |title }}
+            {% else %}
+            Please Update Your Certification Info
+            {% endif %}
+          </small>
+        </div>
+        </div>
+        <hr>
+      <div class="panel panel-default" id="User-info">
+          <div class="panel-heading">
+            <h4 class="panel-title text-center">User info</h4>
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <div class="col-sm-10">
+                  {{ u_form.username |as_crispy_field}}
+              </div>
+              <div class="col-sm-10">
+                  {{ u_form.email |as_crispy_field }}             
+              </div>
+              <div class="col-sm-10">
+                {{ p_form.image |as_crispy_field }}             
+            </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title text-center">Education Details</h4>
+            </div>
+          <div class="form-group">
+            <div class="col-sm-10">
+                {{ p_form.Education |as_crispy_field}}
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-10">
+                {{ p_form.Certified_In |as_crispy_field}}                
+            </div>
+            <div class="col-sm-10">
+                {{ p_form.Country |as_crispy_field}}                
+            </div>
+            <div class="col-sm-10">
+                {{ p_form.State |as_crispy_field}}                
+            </div>
+            <div class="col-sm-10">
+                {{ p_form.Languages_Spoken |as_crispy_field}}                
+            </div>
+            <div class="col-sm-10">
+                {{ p_form.Subjects |as_crispy_field}}                
+            </div>
+            <div class="col-sm-10">
+                {{ p_form.Expertise_Subject |as_crispy_field}}                
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="panel panel-default"  id="User-info">
+        <div class="panel-heading">
+        <h4 class="panel-title text-center">Experience Details</h4>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <div class="col-sm-10">
+                {{ p_form.Year_Of_Experience |as_crispy_field}}                
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-10">
+                {{ p_form.Teaching_Experience |as_crispy_field}}                
+            </div>
+          </div>
+          <div class="panel-heading">
+            <h4 class="panel-title text-center">Youtube Details</h4>
+            </div>
+          <div class="form-group">
+            <div class="col-sm-10">
+                {{ p_form.Youtube_Subject |as_crispy_field }}
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-10">
+                {{ p_form.Youtube_Url |as_crispy_field }}
+            </div>
+            <div class="panel-heading">
+                <h4 class="panel-title text-center">Company Details</h4>
+            </div>
+            <div class="col-sm-10">
+                {{ p_form.Company |as_crispy_field }}
+            </div>
+            <div class="col-sm-10">
+                {{ p_form.GST_Number |as_crispy_field }}
+            </div>
+            <div class="col-sm-10">
+                {{ p_form.CIN_Number |as_crispy_field }}
+            </div>
+            <div class="col-sm-10">
+                {{ p_form.Company_Postal_Address |as_crispy_field }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default"  id="User-info">
+        <div class="panel-heading">
+        <h4 class="panel-title text-center">Identity Details</h4>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <div class="col-sm-10">
+                {{ p_form.Adhar_Number |as_crispy_field }}
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-10">
+                {{ p_form.Phone_Number |as_crispy_field }}
+            </div>
+          </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title text-center">Bank Details</h4>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                <div class="col-sm-10">
+                  {{ p_form.FullName |as_crispy_field }}
+              </div>
+                <div class="col-sm-10">
+                    {{ p_form.Bank_Account_Number |as_crispy_field }}
+                </div>
+                <div class="col-sm-10">
+                    {{ p_form.IFSC |as_crispy_field }}
+                </div>
+                <div class="col-sm-10">
+                    {{ p_form.Branch |as_crispy_field }}
+                </div>
+            </div>
+
+          <div class="form-group">
+            <div class="col-sm-10 col-sm-offset-2">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+
+{% endblock %}
