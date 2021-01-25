@@ -123,8 +123,12 @@
             <img src="{% static 'images/approved.png' %}" style="height: 30px; margin-top:-5px;" alt="">
           </legend>
           <small style="font-weight:500;">
+            {% if user.profile.FullName %}
             Full Name -
             {{ user.profile.FullName |title}}
+            {% else %}
+            Full Name - Update Your FullName
+            {% endif %}
           </small><br>
           <small style="font-weight:500;">
             Email -
@@ -132,10 +136,10 @@
           </small><br>
           <small style="font-weight:500;">
             <img src="{% static 'images/phone.png' %}"  style="height:18px; "alt="">
-            {% if user.profile.Phone_Number %}
+            {% if not user.profile.Phone_Number %}
             {{ user.profile.Phone_Number}}
             {% else %}
-            Please Update Your Phone Number
+            Update Your Phone Number
             {% endif %}
           </small><br>
           <small style="font-weight:500;">
@@ -144,15 +148,16 @@
             {{ user.profile.Country |title }},
             {{ user.profile.State |title }}
             {% else %}
-            Please Update Your Location Details
+            Update Your Location Details
             {% endif %}
           </small><br>
           <small style="font-weight:500;">
+            <img src="{% static 'images/certificate.png' %}" style="height:20px;"  alt="">
             {% if user.profile.Certified_In %}
             Certified Professional Trainer @
             {{ user.profile.Certified_In |title }}
             {% else %}
-            Please Update Your Certification Info
+            Update Your Certification Info
             {% endif %}
           </small>
         </div>

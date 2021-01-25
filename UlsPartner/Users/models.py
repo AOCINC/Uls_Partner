@@ -39,7 +39,7 @@ class Profile(models.Model):
     Youtube_Url = models.CharField(max_length = 159,default = '', blank = True,help_text = "Your Youtube Channel URL")
     Company = models.CharField(max_length=89)
     Adhar_Number = models.CharField(max_length=12,validators=[RegexValidator(r'^\d{1,12}$')], default='Adhar Number')
-    Phone_Number = models.CharField(max_length=12,validators = [RegexValidator(r'^\d{1,12}$')], default = 'Mobile Number')
+    Phone_Number = models.CharField(max_length=12,validators = [RegexValidator(r'^\d{1,12}$')], default = ' ')
     GST_Number   = models.CharField(max_length = 15, blank=True)
     Pan_Number   = models.CharField(max_length=10, default ='PAN Number', blank = True)
     CIN_Number   = models.CharField(max_length = 21, blank = True)
