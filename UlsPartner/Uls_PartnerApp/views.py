@@ -15,3 +15,10 @@ def Terms_Conditions(request):
 def privacy_policy(request):
     template_name = 'Uls_PartnerApp/privacy_policy.html'
     return render(request, template_name)
+
+
+def Instructor_Conditions(request):
+    template_name = 'Uls_PartnerApp/Instructor_Terms_Conditions.html'
+    return render(request, template_name)
+
+
