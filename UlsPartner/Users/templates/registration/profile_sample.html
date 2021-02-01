@@ -136,7 +136,7 @@
           </small><br>
           <small style="font-weight:500;">
             <img src="{% static 'images/phone.png' %}"  style="height:18px; "alt="">
-            {% if not user.profile.Phone_Number %}
+            {% if user.profile.Phone_Number %}
             {{ user.profile.Phone_Number}}
             {% else %}
             Update Your Phone Number
